@@ -13,14 +13,11 @@ This code was tested on Ubuntu 20.04
    - `cd isaacgym/python && pip install -e .` to install the requirements
    - Try running an example `cd examples && python 1080_balls_of_solitude.py` (you need to execute the examples from the examples directory)
    - For troubleshooting check docs `isaacgym/docs/index.html`)
-4. Clone and initialize this repo
-   - clone `gpugym`, then init the [submodules](https://www.atlassian.com/git/tutorials/git-submodule):
-   - `cd gpugym && git submodule init && git submodule update`
-5. Install gpu_rl (PPO implementation)
+4. Install gpu_rl (PPO implementation)
    - `cd gpu_rl && pip install -e .`
-6. Install gpuGym
+5. Install gpuGym
     - `cd .. && pip install -e .`
-7. Install other dependencies
+6. Install other dependencies
     - `pip install statsmodels && pip install seaborn && pip install numpy==1.20.3`
 
 ---
