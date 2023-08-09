@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="Humanoid">
+
+<link 
+  name="base">
+  <inertial>
+    <origin 
+      xyz="0.05788472573346974 0.059610530571960814 0.1530054548610727" 
+      rpy="0 0 0"/>
+    <mass 
+      value="9.733256227883512"/>
+    <inertia 
+      ixx="0.8004245103272555" 
+      iyy="0.5537216648299893" 
+      izz="0.2992817251792882" 
+      ixy="-3.135710702524552e-05" 
+      iyz="-5.786792059755963e-05" 
+      ixz="-0.015612929444345142"/>
+  </inertial>
+  <visual>
+    <origin 
+      xyz="0 0 0.2" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/simplify_torso low quality.stl" 
+        scale="0.001 -0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 1.5" xyz="0.0 0.0 0.15"/>
+    <geometry>
+      <box size="0.3 0.12 0.35"/>
+    </geometry>
+  </collision>
+</link>
+
+<link 
+  name="right_hip_yaw">
+  <inertial>
+    <origin 
+      xyz="-0.10160165552883052 3.789498289055726e-05 -0.08509638780752743" 
+      rpy="0 0 0"/>
+    <mass 
+      value="0.9976560754135636"/>
+    <inertia 
+      ixx="0.001733" 
+      iyy="0.001836" 
+      izz="0.001258" 
+      ixy="-1e-06" 
+      iyz="-1e-06" 
+      ixz="-0.000481"/>
+  </inertial>
+  <visual>
+    <!--<origin xyz="-0.11 0.0 -0.29" rpy="0 0 0"/>-->
+    <origin 
+      xyz="0.0 0.0 0.0" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/hip abduct.stl" 
+        scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+</link>
+
+<link 
+  name="right_hip_abad">
+  <inertial>
+    <origin  
+      xyz="0.06206149605048397 0.036399012141839424 1.6388564219010915e-05" 
+      rpy="0 0 0"/>
+    <mass 
+      value="2.0442329182864585"/>
+    <inertia 
+      ixx="0.002775" 
+      iyy="0.004202" 
+      izz="0.003238" 
+      ixy="-0.000191" 
+      iyz="0.0" 
+      ixz="3e-06"/>
+  </inertial>
+  <visual>
+    <!--<origin xyz="-0.11 0.075 -0.3815" rpy="0 0 0"/>-->
+    <origin 
+      xyz="0.0 0.0 0.0" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/hip flex 1.stl" 
+        scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+</link>
+
+<link 
+  name="right_upper_leg">
+  <inertial>
+    <origin 
+      xyz="3.393818076067292e-06 -0.046396593512985584 -0.09313945670054535" 
+      rpy="0 0 0"/>
+    <mass 
+      value="4.3536877020835725"/>
+    <inertia 
+      ixx="0.033411" 
+      iyy="0.031523" 
+      izz="0.007717" 
+      ixy="-0.0" 
+      iyz="0.002968" 
+      ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <!--<origin xyz="-0.1 0.0 -0.3815" rpy="0 0 0"/>-->
+    <origin 
+      xyz="0.0 0.0 0.0" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/thigh.stl" 
+        scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 1.5" xyz="-0.02 0.0 -0.16"/>
+    <geometry>
+        <cylinder radius="0.035" length="0.15"/>
+      </geometry>
+    </collision>
+</link>
+
+<link 
+  name="right_lower_leg">
+  <inertial>
+    <origin 
+      xyz="0.0021406088386680257 -0.029369373463310464 -0.1034811103988495" 
+      rpy="0 0 0"/>
+    <mass 
+      value="0.6491286458131267"/>
+    <inertia 
+      ixx="0.00514" 
+      iyy="0.005112" 
+      izz="0.000291" 
+      ixy="-4e-06" 
+      iyz="0.000149" 
+      ixz="-7e-05"/>
+  </inertial>
+  <visual>
+    <!--<origin xyz="-0.12 0.0 -0.6545" rpy="0 0 0"/>-->
+    <origin 
+      xyz="0.0 0.0 0.0" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/shank.stl" 
+        scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 1.5" xyz="0.0 0.0 -0.15"/>
+    <geometry>
+      <cylinder radius="0.035" length="0.15"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_foot">
+  <inertial>
+    <origin 
+      xyz="0.011157853770708784 -0.014309008341845009 -0.023348929042598665" 
+      rpy="0 0 0"/>
+    <mass 
+      value="0.21123130775759938"/>
+    <inertia 
+      ixx="9.1e-05" 
+      iyy="0.0004" 
+      izz="0.000347" 
+      ixy="0.0" 
+      iyz="-1e-06" 
+      ixz="3e-05"/>
+  </inertial>
+  <visual>
+    <!--<origin xyz="-0.12 0.0 -0.9045" rpy="0 0 0"/>-->
+    <origin 
+      xyz="0.0 0.0 0.0" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/FOOT.stl" 
+        scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+  <collision>
+      <origin rpy="1.57079 0 0" xyz="-0.0 -0.01 -0.03"/>
+        <geometry>
+          <box size="0.17 0.02 0.05"/>
+        </geometry>
+  </collision>
+</link>
+
+<link name="left_hip_yaw">
+  <inertial>
+    <origin 
+      xyz="-0.10160165552883074 3.789498289055726e-05 -0.08509638780752746" 
+      rpy="0 0 0"/>
+    <mass 
+      value="0.997656075413564"/>
+    <inertia 
+      ixx="0.001733" 
+      iyy="0.001836" 
+      izz="0.001258" 
+      ixy="-1e-06" 
+      iyz="-1e-06" 
+      ixz="-0.000481"/>
+  </inertial>
+  <visual>
+    <!--<origin xyz="0.11 0.0 -0.29" rpy="0 0 0"/>-->
+    <origin 
+      xyz="0.0 0.0 0.0" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/hip abduct.stl" 
+        scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+</link>
+
+<link 
+  name="left_hip_abad">
+  <inertial>
+    <origin 
+      xyz="0.062061496050483875 -0.03639901214183931 -1.6388564214431245e-05" 
+      rpy="0 0 0"/>
+    <mass 
+      value="2.0442329182864616"/>
+    <inertia 
+      ixx="0.002775" 
+      iyy="0.004202" 
+      izz="0.003238" 
+      ixy="0.000191" 
+      iyz="0.0" 
+      ixz="-3e-06"/>
+  </inertial>
+  <visual>
+    <!--<origin xyz="0.11 0.075 -0.3815" rpy="0 0 0"/>-->
+    <origin 
+      xyz="0.0 0.0 0.0" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/hip flex 1.stl" 
+        scale="-0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+</link>
+
+<link name="left_upper_leg">
+  <inertial>
+    <origin 
+      xyz="3.392950410869689e-06 0.04639659964536694 -0.09313942319562427" 
+      rpy="0 0 0"/>
+    <mass 
+      value="4.353686864474232"/>
+    <inertia 
+      ixx="0.033411" 
+      iyy="0.031523" 
+      izz="0.007717" 
+      ixy="0.0" 
+      iyz="-0.002968" 
+      ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <!--<origin xyz="0.1 0.0 -0.3815" rpy="0 0 0"/>-->
+    <origin 
+      xyz="0.0 0.0 0.0" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/thigh.stl" 
+        scale="-0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 1.5" xyz="0.02 0.0 -0.16"/>
+    <geometry>
+        <cylinder radius="0.035" length="0.15"/>
+      </geometry>
+    </collision>
+</link>
+
+<link name="left_lower_leg">
+  <inertial>
+    <origin 
+      xyz="0.002140611479247496 0.029369371975319927 -0.103481106043327" 
+      rpy="0 0 0"/>
+    <mass 
+      value="0.6491285472014533"/>
+    <inertia 
+      ixx="0.00514" 
+      iyy="0.005112" 
+      izz="0.000291" 
+      ixy="4e-06" 
+      iyz="-0.000149" 
+      ixz="-7e-05"/>
+  </inertial>
+  <visual>
+    <!--<origin xyz="0.12 0.0 -0.6545" rpy="0 0 0"/>-->
+    <origin 
+      xyz="0.0 0.0 0.0" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/shank.stl" 
+        scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 1.5" xyz="0.0 0.0 -0.15"/>
+    <geometry>
+      <cylinder radius="0.035" length="0.15"/>
+    </geometry>
+  </collision>
+
+</link>
+
+<link 
+  name="left_foot">
+  <inertial>
+    <origin 
+      xyz="0.011157853647402547 0.014691253562940862 -0.02334890746391094" 
+      rpy="0 0 0"/>
+    <mass 
+      value="0.21123130775759935"/>
+    <inertia 
+      ixx="9.1e-05" 
+      iyy="0.0004" 
+      izz="0.000347" 
+      ixy="0.0" 
+      iyz="-1e-06" 
+      ixz="3e-05"/>
+  </inertial>
+  <visual>
+    <!--<origin xyz="0.12 0.0 -0.9045" rpy="0 0 0"/>-->
+    <origin 
+      xyz="0.0 0.0 0.0" 
+      rpy="0 0 1.5"/>
+    <geometry>
+      <mesh 
+        filename="STLs/FOOT.stl" 
+        scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+  </visual>
+  <collision>
+      <origin rpy="1.57079 0 0" xyz="-0.0 -0.01 -0.03"/>
+        <geometry>
+          <box size="0.17 0.02 0.05"/>
+        </geometry>
+  </collision>
+</link>
+
+
+<joint 
+  name="left_hip_yaw" 
+  type="revolute">
+  <origin 
+    xyz="0.0 0.11 -0.09" 
+    rpy="0 0 0"/>
+  <parent 
+    link="base"/>
+  <child 
+    link="left_hip_yaw"/>
+  <axis 
+    xyz="0.0 0.0 -1.0"/>
+        <limit effort="52" lower="-6.28" upper="6.28" velocity="50"/>
+    <dynamics damping="0.0" friction="0.0" rotor_inertia="0.01188"/>
+</joint>
+
+<joint 
+  name="left_hip_abad" 
+  type="revolute">
+  <origin 
+    xyz="-0.075 0.0 -0.0915" 
+    rpy="0 0 0"/>
+  <parent 
+    link="left_hip_yaw"/>
+  <child 
+    link="left_hip_abad"/>
+  <axis 
+    xyz="1.0 0.0 0.0"/>
+        <limit effort="52" lower="-6.28" upper="6.28" velocity = "50"/>
+    <dynamics damping="0.0" friction="0.0" rotor_inertia="0.01188"/>
+</joint>
+
+<joint 
+  name="left_hip_pitch" 
+  type="revolute">
+  <origin 
+    xyz="0.075 -0.01 0.0" 
+    rpy="0 0 0"/>
+  <parent 
+    link="left_hip_abad"/>
+  <child 
+    link="left_upper_leg"/>
+  <axis 
+    xyz="0.0 1.0 0.0"/>
+        <limit effort="72" lower="-6.28" upper="6.28" velocity="50"/>
+    <dynamics damping="0.0" friction="0.0" rotor_inertia="0.0198"/>
+</joint>
+
+<joint 
+  name="left_knee" 
+  type="revolute">
+  <origin 
+    xyz="0.0 0.02 -0.273" 
+    rpy="0 0 0"/>
+  <parent 
+    link="left_upper_leg"/>
+  <child 
+    link="left_lower_leg"/>
+  <axis 
+    xyz="0.0 1.0 0.0"/>
+      <limit effort="144" lower="0." upper="3." velocity="25"/>
+    <dynamics damping="0.0" friction="0.0" rotor_inertia="0.01188"/>
+</joint>
+
+<joint 
+  name="left_ankle" 
+  type="revolute">
+  <origin 
+    xyz="0.0 0.0 -0.25" 
+    rpy="0 0 0"/>
+  <parent 
+    link="left_lower_leg"/>
+  <child 
+    link="left_foot"/>
+  <axis 
+    xyz="0.0 1.0 0.0"/>
+        <limit effort="72" lower="-1.5" upper="1.5" velocity="25"/>
+    <dynamics damping="0.0" friction="0.0" rotor_inertia="0.04752"/>
+</joint>
+
+<joint 
+  name="right_hip_yaw" 
+  type="revolute">
+  <origin 
+    xyz="0.0 -0.11 -0.09" 
+    rpy="0 0 0"/>
+  <parent 
+    link="base"/>
+  <child 
+    link="right_hip_yaw"/>
+  <axis 
+    xyz="0.0 0.0 1.0"/>
+        <limit effort="52" lower="-6.28" upper="6.28" velocity="50"/>
+    <dynamics damping="0.0" friction="0.0" rotor_inertia="0.01188"/>
+</joint>
+
+<joint 
+  name="right_hip_abad" 
+  type="revolute">
+  <origin 
+    xyz="-0.075 0.0 -0.0915" 
+    rpy="0 0 0"/>
+  <parent 
+    link="right_hip_yaw"/>
+  <child 
+    link="right_hip_abad"/>
+  <axis 
+    xyz="-1.0 0.0 0.0"/>
+        <limit effort="52" lower="-6.28" upper="6.28" velocity = "50"/>
+    <dynamics damping="0.0" friction="0.0" rotor_inertia="0.01188"/>
+</joint>
+
+<joint 
+  name="right_hip_pitch" 
+  type="revolute">
+  <origin 
+    xyz="0.075 0.01 0.0" 
+    rpy="0 0 0"/>
+  <parent 
+    link="right_hip_abad"/>
+  <child 
+    link="right_upper_leg"/>
+  <axis 
+    xyz="0.0 1.0 0.0"/>
+        <limit effort="72" lower="-6.28" upper="6.28" velocity="50"/>
+    <dynamics damping="0.0" friction="0.0" rotor_inertia="0.0198"/>
+</joint>
+
+<joint 
+  name="right_knee" 
+  type="revolute">
+  <origin 
+    xyz="0.0 -0.02 -0.27" 
+    rpy="0 0 0"/>
+  <parent 
+    link="right_upper_leg"/>
+  <child 
+    link="right_lower_leg"/>
+  <axis 
+    xyz="0.0 1.0 0.0"/>
+        <limit effort="144" lower="0." upper="3.0" velocity="25"/>
+    <dynamics damping="0.0" friction="0.0" rotor_inertia="0.01188"/>
+</joint>
+
+<joint 
+  name="right_ankle" 
+  type="revolute">
+  <origin 
+    xyz="0.0 0.0 -0.25" 
+    rpy="0 0 0"/>
+  <parent 
+    link="right_lower_leg"/>
+  <child 
+    link="right_foot"/>
+  <axis 
+    xyz="0.0 1.0 0.0"/>
+        <limit effort="72" lower="-1.5" upper="1.5" velocity="25"/>
+    <dynamics damping="0.0" friction="0.0" rotor_inertia="0.04752"/>
+</joint>
+
+
+
+</robot>
