@@ -30,16 +30,16 @@ class HumanoidCfg(LeggedRobotCfg):
 
         class ranges:
             # TRAINING COMMAND RANGES #
-            # lin_vel_x = [0, 3]        # min max [m/s]
-            # lin_vel_y = [-0.75 ,0.75]   # min max [m/s]
-            # ang_vel_yaw = [-2., 2.]     # min max [rad/s]
-            # heading = [0., 0.]
+            lin_vel_x = [0, 3]        # min max [m/s]
+            lin_vel_y = [-0.75 ,0.75]   # min max [m/s]
+            ang_vel_yaw = [-2., 2.]     # min max [rad/s]
+            heading = [0., 0.]
 
             # PLAY COMMAND RANGES #
-            lin_vel_x = [3., 3.]    # min max [m/s]
-            lin_vel_y = [-0., 0.]     # min max [m/s]
-            ang_vel_yaw = [0, 0]      # min max [rad/s]
-            heading = [0, 0]
+            # lin_vel_x = [3., 3.]    # min max [m/s]
+            # lin_vel_y = [-0., 0.]     # min max [m/s]
+            # ang_vel_yaw = [0, 0]      # min max [rad/s]
+            # heading = [0, 0]
 
     class init_state(LeggedRobotCfg.init_state):
         reset_mode = 'reset_to_range'

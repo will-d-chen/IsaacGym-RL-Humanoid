@@ -1,15 +1,16 @@
 # Overview #
-This repository is a port of pbrshumanoid from the Biomimetic Robotics Lab which is a port of legged_gym from the RSL research group
+This repository is a port of pbrshumanoid from the Biomimetic Robotics Lab which itself is a port of legged_gym from the RSL research group
 
 ---
 
 ### Installation ###
+This code was tested on Ubuntu 20.04
 1. Create a new python virtual env with python 3.6, 3.7 or 3.8 (3.8 recommended)
 2. Install pytorch 1.10 with cuda-11.3:
     - `pip install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
 3. Install Isaac Gym
-   - Download and install Isaac Gym Preview 3 (Preview 2 will not work!) from https://developer.nvidia.com/isaac-gym (extract the zip package, copy the isaacgym folder within the package whereever you want it to live - I prefer in the directory with my virtual enviornment)
-   - `cd isaacgym_lib/python && pip install -e .` to install the requirements
+   - Download and install Isaac Gym Preview 4 from https://developer.nvidia.com/isaac-gym (extract the zip package, copy the isaacgym folder within the package whereever you want it to live - I prefer in the directory with my virtual enviornment)
+   - `cd isaacgym/python && pip install -e .` to install the requirements
    - Try running an example `cd examples && python 1080_balls_of_solitude.py` (you need to execute the examples from the examples directory)
    - For troubleshooting check docs `isaacgym/docs/index.html`)
 4. Clone and initialize this repo
@@ -34,9 +35,10 @@ This repository is a port of pbrshumanoid from the Biomimetic Robotics Lab which
 
 ### Use ###
 1. Train:  
-  ```python gpugym/scripts/train.py --task=pbrs:humanoid && python plotgraph.py```
+  ```python gpugym/scripts/train.py --task=pbrs:humanoid```
     -  To run on CPU add following arguments: `--sim_device=cpu`, `--rl_device=cpu` (sim on CPU and rl on GPU is possible).
-    -  To run headless (no rendering) add `--headless`.
+    -  To run headless (no rendering) add `--headless`. (Recommended)
+    -  To plot the rewards at the end of training add `&& python plotgraph.py`.
     - **Important**: To improve performance, once the training starts press `v` to stop the rendering. You can then enable it later to check the progress.
     - The trained policy is saved in `gpugym/logs/<experiment_name>/<date_time>_<run_name>/model_<iteration>.pt`. Where `<experiment_name>` and `<run_name>` are defined in the train config.
     -  The following command line arguments override the values set in the config files:
