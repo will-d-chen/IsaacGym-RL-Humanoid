@@ -30,7 +30,7 @@ class HumanoidCfg(LeggedRobotCfg):
 
         class ranges:
             # TRAINING COMMAND RANGES #
-            lin_vel_x = [0, 3]        # min max [m/s]
+            lin_vel_x = [0, 4.5]        # min max [m/s]
             lin_vel_y = [-0.75 ,0.75]   # min max [m/s]
             ang_vel_yaw = [-2., 2.]     # min max [rad/s]
             heading = [0., 0.]
