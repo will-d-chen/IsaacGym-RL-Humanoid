@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Chen"
+  given-names: "Danyi"
+  orcid: "https://orcid.org/0000-0003-4786-2188"
+title: "IsaacGym-RL-Humanoid"
+version: 1.0.0
+date-released: 2023-11-10
+url: "https://github.com/will-d-chen/IsaacGym-RL-Humanoid"
